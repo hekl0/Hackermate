@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.hekl0.hackermate.R;
 
 /**
@@ -21,10 +20,18 @@ public class ChatListFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.fragment_chat_list, container, false);
+        ChatPerson[] CP = new ChatPerson[105];
+        for (int i = 0; i < 100; i++) {
+            CP[i] = new ChatPerson("loc kun", "bao dep trai", "R.drawable.logo");
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat_list, container, false);
+
+        return view;
+
+
     }
 
 }
