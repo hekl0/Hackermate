@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.viewpager);
-        viewPagerAdapter.addFragment(new SearchFragment());
+        viewPagerAdapter.addFragment(new ProfileFragment());
         viewPager.setAdapter(viewPagerAdapter);
     }
 }
