@@ -37,7 +37,7 @@ public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull CardstackViewHolder cardstackViewHolder, int i) {
-        cardstackViewHolder.setData(profileModelList.get(i));
+        cardstackViewHolder.setData(profileModelList.get(i), i);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdap
             view = itemView;
         }
 
-        public void setData(ProfileModel profileModel) {
+        public void setData(ProfileModel profileModel, int position) {
             TextView name = view.findViewById(R.id.name);
             TextView majorSchool = view.findViewById(R.id.major_and_school);
             ImageView badge = view.findViewById(R.id.iv_badge);
@@ -65,7 +65,7 @@ public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdap
             name.setText(profileModel.name);
             majorSchool.setText(profileModel.major + ", " + profileModel.school);
 
-            switch (new Random().nextInt(4)) {
+            switch (position) {
                 case 0:
                     badge.setImageResource(R.drawable.badge_1);
                     break;

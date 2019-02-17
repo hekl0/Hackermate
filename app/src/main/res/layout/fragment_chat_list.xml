@@ -12,6 +12,6 @@
             android:layout_marginTop="0dp"
             android:layout_marginBottom="0dp"
             android:divider="@android:color/transparent"
-            android:dividerHeight="10.0sp"/>
+            android:dividerHeight="14.0sp"/>
 
 </RelativeLayout>

@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/ChatSquare"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+        android:id="@+id/ChatSquare"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="6dp"
-        android:id="@+id/avatar"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/avatar"/>
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/PersonName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textStyle="italic|bold"
-            android:textSize="16dp"
-            android:layout_marginTop="2dp"
-            />
+            android:orientation="vertical">
+
         <TextView
-            android:id="@+id/PersonLastMess"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"/>
+                android:id="@+id/PersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="serif"
+                android:layout_marginTop="2dp"
+                android:text="Loc Bui"
+                />
+
+        <TextView
+                android:id="@+id/PersonLastMess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textSize="14sp"
+                android:text="lala"
+                android:textStyle="italic"/>
     </LinearLayout>
 </LinearLayout>

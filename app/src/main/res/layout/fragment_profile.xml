@@ -39,7 +39,7 @@
                 android:layout_below="@id/ava"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="monospace"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:text="Ash Nguyen"/>
 
         <TextView
@@ -47,7 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Computer Science, University of Rochester"
-                android:fontFamily="cursive"
+                android:fontFamily="casual"
+                android:textSize="12sp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/name"/>
 
