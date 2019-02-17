@@ -24,7 +24,7 @@ import jp.wasabeef.picasso.transformations.CropTransformation;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment implements View.OnClickListener {
     ImageView ava;
     TextView name;
     TextView majorSchool;
@@ -65,7 +65,21 @@ public class ProfileFragment extends Fragment {
         HacksAdapter hacksAdapter = new HacksAdapter();
         hacks.setAdapter(hacksAdapter);
 
+        ImageView setting = view.findViewById(R.id.iv_setting);
+        setting.setOnClickListener(this);
+        ImageView logout = view.findViewById(R.id.iv_logout);
+        logout.setOnClickListener(this);
+
         return view;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.iv_setting:
+                break;
+            case R.id.iv_logout:
+                break;
+        }
+    }
 }

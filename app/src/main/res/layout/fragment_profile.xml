@@ -10,11 +10,27 @@
             android:layout_height="match_parent">
 
         <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_setting"
+                android:padding="16dp"/>
+
+        <ImageView
+                android:id="@+id/iv_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_logout"
+                android:padding="16dp"
+                android:layout_alignParentEnd="true"/>
+
+        <ImageView
                 android:id="@+id/ava"
-                android:layout_width="205dp"
-                android:layout_height="206dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 tools:src="@drawable/logo"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"/>
 
         <TextView
                 android:id="@+id/name"

@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.hekl0.hackermate.Model.HackModel;
 import com.example.hekl0.hackermate.R;
+import com.squareup.picasso.Picasso;
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,6 +57,26 @@ public class HacksAdapter extends BaseAdapter {
             ava3.setVisibility(View.GONE);
             ava4.setVisibility(View.GONE);
         }
+
+        Picasso.get()
+                .load(R.drawable.ava_bao)
+                .transform(new CropCircleTransformation())
+                .into(ava1);
+
+        Picasso.get()
+                .load(R.drawable.ava_loc)
+                .transform(new CropCircleTransformation())
+                .into(ava2);
+
+        Picasso.get()
+                .load(R.drawable.ava_ash)
+                .transform(new CropCircleTransformation())
+                .into(ava3);
+
+        Picasso.get()
+                .load(R.drawable.ava_phanh)
+                .transform(new CropCircleTransformation())
+                .into(ava4);
 
         return convertView;
     }

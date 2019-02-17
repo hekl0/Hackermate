@@ -39,7 +39,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         yourSchool = findViewById(R.id.your_school);
         yourMajor = findViewById(R.id.your_major);
 
-        SkillsAdapter skillsAdapter = new SkillsAdapter();
+        SkillsAdapter skillsAdapter = new SkillsAdapter(true);
         GridView gvSkills = findViewById(R.id.SignUpSkills);
         gvSkills.setAdapter(skillsAdapter);
         FButton signupButton = findViewById(R.id.signup_button);
