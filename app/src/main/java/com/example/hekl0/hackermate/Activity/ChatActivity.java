@@ -1,5 +1,6 @@
 package com.example.hekl0.hackermate.Activity;
 
+import com.example.hekl0.hackermate.Adapter.DataAdapterChatBox;
 import com.example.hekl0.hackermate.Adapter.DataAdapterInBox;
 import com.example.hekl0.hackermate.Model.ConvoModel;
 import com.example.hekl0.hackermate.Model.Message;
@@ -24,20 +25,20 @@ import java.util.List;
 
 
 public class ChatActivity extends AppCompatActivity {
-    public String chatId;
+    public String HeaderImgSrc;
     private DatabaseReference dtfb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox);
-        dtfb = FirebaseDatabase.getInstance().getReference().child("Chat List").child(chatId);
+        //dtfb = FirebaseDatabase.getInstance().getReference().child("Chat List").child(chatId);
         List<Message> messages = new ArrayList<>();
         ListView ult2 = findViewById(R.id.lv);
         ImageView Avatar = findViewById(R.id.avatar);
         List<String> ChatList = UserDatabase.profileModel.chatList;
         Picasso.get()
-                .load(UserDatabase.profileModel.image)
+                .load(DataAdapterChatBox.src)
                 .transform(new CropCircleTransformation())
                 .into(Avatar);
         ImageView back = findViewById(R.id.backbtn);

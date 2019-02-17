@@ -39,8 +39,6 @@ public class ChatsDatabase {
                 profileModel = dataSnapshot.getValue(ProfileModel.class);
                 if (profileModel.hackGoingTo == null)
                     profileModel.hackGoingTo = new ArrayList<>();
-                if (profileModel.willingToDo == null)
-                    profileModel.willingToDo = new ArrayList<>();
                 if(profileModel.skills == null)
                     profileModel.skills = new ArrayList<>();
                 if (profileModel.history == null)

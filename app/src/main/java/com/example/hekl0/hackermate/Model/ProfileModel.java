@@ -16,7 +16,10 @@ public class ProfileModel {
     public List<String> chatList = new ArrayList<>();
 
 
-    public ProfileModel( String image, String name, String school, String major, String hobbies, List<String> skills) {
+    public ProfileModel() {
+    }
+
+    public ProfileModel(String image, String name, String school, String major, String hobbies, List<String> skills) {
         this.image = image;
         this.name = name;
         this.school = school;
