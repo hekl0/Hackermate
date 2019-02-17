@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.example.hekl0.hackermate.Adapter.SkillsAdapter;
 import com.example.hekl0.hackermate.R;
+import com.example.hekl0.hackermate.Utils.UserDatabase;
 import com.squareup.picasso.Picasso;
 
 import info.hoang8f.widget.FButton;
@@ -20,14 +21,10 @@ import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 public class ProfileUpdateActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "SignUpActivity";
-
-    EditText username;
-    EditText email;
-    EditText password;
-    EditText confirmPassword;
     EditText yourName;
     EditText yourSchool;
     EditText yourMajor;
+    EditText yourHobbies;
 
 
     @Override
@@ -35,13 +32,10 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_update);
 
-        username = findViewById(R.id.username);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        confirmPassword = findViewById(R.id.confirm_password);
         yourName = findViewById(R.id.your_name);
         yourSchool = findViewById(R.id.your_school);
         yourMajor = findViewById(R.id.your_major);
+        yourHobbies = findViewById(R.id.your_hobbie);
         ImageView ava = findViewById(R.id.ProfileAvatar);
         Picasso.get()
                 .load(R.drawable.default_ava)
@@ -58,6 +52,11 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
 
         ImageView backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(this);
+
+        yourName.setText(UserDatabase.profileModel.name);
+        yourSchool.setText(UserDatabase.profileModel.school);
+        yourMajor.setText(UserDatabase.profileModel.major);
+        yourHobbies.setText(UserDatabase.profileModel.hobbies);
     }
 
     @Override
@@ -70,31 +69,18 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
                 if (!checkValidInfo())
                     return;
                 Log.d(TAG, "onClick: valid info");
+                UserDatabase.profileModel.name = yourName.getText().toString();
+                UserDatabase.profileModel.school = yourSchool.getText().toString();
+                UserDatabase.profileModel.major = yourMajor.getText().toString();
+                UserDatabase.profileModel.hobbies = yourHobbies.getText().toString();
+                UserDatabase.updateProfile();
+                finish();
                 break;
         }
     }
 
     private boolean checkValidInfo() {
         boolean valid = true;
-
-        if (username.getText().toString().length() < 6) {
-            username.setError("Username must be at least 6 characters long");
-            valid = false;
-        }
-
-        if (!email.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")) {
-            email.setError("Invalid email address");
-            valid = false;
-        }
-        if (password.getText().toString().length() < 6) {
-            password.setError("Password must be at least 6 characters long");
-            valid = false;
-        }
-
-        if (!confirmPassword.getText().toString().equals(password.getText().toString())) {
-            confirmPassword.setError("Doesn't match with password above");
-            valid = false;
-        }
 
         if (yourName.getText().toString().length() == 0) {
             yourName.setError("Can't be empty");

@@ -43,60 +43,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"/>
 
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="New Email"
-                android:inputType="textEmailAddress"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="New Password"
-                android:inputType="textPassword"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-            <EditText
-                android:id="@+id/confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Confirm new password"
-                android:inputType="textPassword"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/grey"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="12dp"/>
-
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,8 +53,7 @@
                 android:id="@+id/your_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your name"
-                android:inputType="textPassword"/>
+                android:hint="Your name"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -122,8 +67,7 @@
                 android:id="@+id/your_school"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your school"
-                android:inputType="textPassword"/>
+                android:hint="Your school"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -137,8 +81,7 @@
                 android:id="@+id/your_major"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your major"
-                android:inputType="textPassword"/>
+                android:hint="Your major"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -152,8 +95,7 @@
                 android:id="@+id/your_hobbie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your Hobbie(s)"
-                android:inputType="textPassword"/>
+                android:hint="Your Hobbie(s)"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -176,14 +118,12 @@
             android:id="@+id/signup_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Apply Change(s)"
+            android:text="Apply Change"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="6dp"/>
-
-
 
     </LinearLayout>
 </ScrollView>

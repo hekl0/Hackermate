@@ -1,7 +1,9 @@
 package com.example.hekl0.hackermate.Adapter;
 
 import android.support.annotation.NonNull;
+import android.support.constraint.solver.widgets.Snapshot;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.hekl0.hackermate.Model.ProfileModel;
 import com.example.hekl0.hackermate.R;
+import com.google.firebase.database.*;
+import okhttp3.internal.cache.DiskLruCache;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +21,8 @@ import java.util.List;
 public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdapter.CardstackViewHolder>  {
     List<ProfileModel> profileModelList = new ArrayList<>();
 
-    public CardstackViewAdapter() {
-        for (int i = 0; i < 10; i++)
-            profileModelList.add(new ProfileModel("", "Loc Bui " + i, "University of Rochester", "Computer Science", "", null));
+    public CardstackViewAdapter(List<ProfileModel> list) {
+        profileModelList = list;
     }
 
     @NonNull
