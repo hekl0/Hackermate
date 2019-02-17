@@ -1,5 +1,6 @@
 package com.example.hekl0.hackermate.Activity;
 
+import com.example.hekl0.hackermate.Adapter.DataAdapter;
 import com.example.hekl0.hackermate.Adapter.DataAdapterChatBox;
 import com.example.hekl0.hackermate.Adapter.DataAdapterInBox;
 import com.example.hekl0.hackermate.Model.ConvoModel;
@@ -41,6 +42,11 @@ public class ChatActivity extends AppCompatActivity {
                 .load(DataAdapterChatBox.src)
                 .transform(new CropCircleTransformation())
                 .into(Avatar);
+        if(DataAdapterChatBox.src.equals(DataAdapterChatBox.src1)) {
+            messages.add(new Message("Hey, u want to join my team?",true));
+            messages.add(new Message("Okay",false));
+            messages.add(new Message("But to make sure i am not really good with android!",false));
+        }
         ImageView back = findViewById(R.id.backbtn);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

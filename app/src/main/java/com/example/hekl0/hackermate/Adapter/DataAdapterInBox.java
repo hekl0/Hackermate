@@ -49,14 +49,14 @@ public class DataAdapterInBox extends BaseAdapter {
 
         view = inflater.inflate(R.layout.messages, null);
         // Đặt chữ cho từng view trong danh sách.
-        if(i%2==0) {
+        if(items.get(i).IsUser == true) {
             view.findViewById(R.id.leftlo).setVisibility(view.GONE);
         }
         else view.findViewById(R.id.tv_name1).setVisibility(view.GONE);
         TextView tvName = view.findViewById(R.id.tv_name1);
         ImageView img = view.findViewById(R.id.img);
         Picasso.get()
-                .load(R.mipmap.anhdeptrai)
+                .load(DataAdapterChatBox.src)
                 .transform(new CropCircleTransformation())
                 .into(img);
         tvName.setText(items.get(i).Content);
