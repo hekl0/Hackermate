@@ -20,7 +20,7 @@ import java.util.List;
 
 
 public class DataAdapterInBox extends BaseAdapter {
-    List<Message> items;
+    public static List<Message> items;
     Activity activity;
     @Override
     public int getCount() {

@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
@@ -34,7 +35,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox);
         //dtfb = FirebaseDatabase.getInstance().getReference().child("Chat List").child(chatId);
-        List<Message> messages = new ArrayList<>();
+        final List<Message> messages = new ArrayList<>();
         ListView ult2 = findViewById(R.id.lv);
         ImageView Avatar = findViewById(R.id.avatar);
         List<String> ChatList = UserDatabase.profileModel.chatList;
@@ -48,16 +49,26 @@ public class ChatActivity extends AppCompatActivity {
             messages.add(new Message("But to make sure i am not really good with android!",false));
         }
         ImageView back = findViewById(R.id.backbtn);
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(ChatActivity.this, MainActivity.class);
-
-                startActivity(intent);
+                finish();
             }
         });
-        DataAdapterInBox DAIB = new DataAdapterInBox(this, messages);
+        final DataAdapterInBox DAIB = new DataAdapterInBox(this, messages);
         ult2.setAdapter(DAIB);
+        final TextView input = findViewById(R.id.inputTextField);
+
+        ImageView Send = findViewById(R.id.iv_send);
+        Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataAdapterInBox.items.add(new Message(input.getText().toString(), true));
+                DAIB.notifyDataSetChanged();
+                input.setText("");
+            }
+        });
     }
 }
