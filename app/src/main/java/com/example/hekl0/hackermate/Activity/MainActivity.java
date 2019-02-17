@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.hekl0.hackermate.Adapter.ViewPagerAdapter;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationBar bottomNavigationBar = findViewById(R.id.bottom_navigation);
+        final BottomNavigationBar bottomNavigationBar = findViewById(R.id.bottom_navigation);
 
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.item_chat, "Chat").setActiveColorResource(R.color.fbutton_color_emerald))
@@ -30,8 +31,45 @@ public class MainActivity extends AppCompatActivity {
                 .initialise();
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.viewpager);
+        final ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPagerAdapter.addFragment(new ChatListFragment());
         viewPagerAdapter.addFragment(new SearchFragment());
+        viewPagerAdapter.addFragment(new ProfileFragment());
         viewPager.setAdapter(viewPagerAdapter);
+
+        bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(int position) {
+                Log.d("navigation", "onTabSelected: " + position);
+                viewPager.setCurrentItem(position);
+            }
+
+            @Override
+            public void onTabUnselected(int position) {
+
+            }
+
+            @Override
+            public void onTabReselected(int position) {
+
+            }
+        });
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                bottomNavigationBar.setFirstSelectedPosition(i);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
     }
 }
