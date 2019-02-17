@@ -20,6 +20,10 @@ public class UserDatabase {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("User List").child(id);
 
+        updateProfile();
+    }
+
+    public static void updateProfile() {
         databaseReference.setValue(profileModel);
     }
 
@@ -41,6 +45,8 @@ public class UserDatabase {
                     profileModel.skills = new ArrayList<>();
                 if (profileModel.history == null)
                     profileModel.history = new ArrayList<>();
+                if (profileModel.chatList == null)
+                    profileModel.chatList = null;
             }
 
             @Override

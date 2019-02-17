@@ -13,6 +13,7 @@ public class ProfileModel {
     public List<String> willingToDo = new ArrayList<>();
     public List<String> skills = new ArrayList<>();
     public List<Hack> history = new ArrayList<>();
+    public List<String> chatList = new ArrayList<>();
 
     public ProfileModel() {}
 
