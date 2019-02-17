@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
+
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.hekl0.hackermate.Adapter.ViewPagerAdapter;
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.viewpager);
-        viewPagerAdapter.addFragment(new SearchFragment());
+        viewPagerAdapter.addFragment(new ProfileFragment());
         viewPager.setAdapter(viewPagerAdapter);
+
     }
 }

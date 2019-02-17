@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.ProfileFragment">
 
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ImageView
         android:id="@+id/ava"
         android:layout_width="205dp"
@@ -21,122 +23,140 @@
         android:layout_below="@id/ava"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/bankgothic"
-        android:textSize="20mm"
+        android:textSize="20dp"
         android:text="Ash Nguyen" />
 
     <TextView
-        android:id="@+id/spacer"
+        android:id="@+id/major_and_school"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="    "
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/name"/>
-
-    <TextView
-        android:id="@+id/major"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Major: Computer Science"
+        android:text="Computer Science, University of Rochester"
         android:fontFamily="@font/brussels"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/name"
-        android:layout_toLeftOf="@id/spacer"
-        />
+        android:layout_below="@id/name" />
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/major_and_school"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status:"
+            android:fontFamily="monospace"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/hack_going"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Going to BrickHack"
+            android:layout_toRightOf="@id/status"
+            android:layout_marginLeft="8dp"/>
+
+        <TextView
+            android:id="@+id/project_wanting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Looking to work in Mobile Project"
+            android:layout_toRightOf="@id/status"
+            android:layout_below="@id/hack_going"
+            android:layout_marginLeft="8dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hobbies:"
+            android:fontFamily="monospace"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/hobbies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/text"
+            android:layout_marginLeft="8dp"
+            android:text="Anime, Chess, Lol"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll1"
+        android:padding="16dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/skill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skills: "
+            android:fontFamily="monospace"
+            android:textStyle="bold" />
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"/>
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/school"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="School: Rochester Institute of Technology"
-        android:fontFamily="@font/brussels"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/name"
-        android:layout_toRightOf="@id/spacer"/>
-
-    <TextView
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status: "
-        android:fontFamily="@font/cantpronoun"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/spacer"
-        />
-    <TextView
-        android:id="@+id/interest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Interests: "
-        android:fontFamily="@font/cantpronoun"
-        android:layout_below="@id/status"
-        android:layout_centerHorizontal="true"
-        />
-    <TextView
-        android:id="@+id/skill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Skills: "
-        android:fontFamily="@font/cantpronoun"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/interest"
-        />
-
-    <GridView
-        android:layout_below="@id/skill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numColumns="4"
-        >
-
-
-    </GridView>
-
-
-    <TextView
-        android:id="@+id/hobbies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hobbies: "
-        android:fontFamily="@font/cantpronoun"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/skill"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/hobbies"
+        android:layout_below="@id/ll"
         android:layout_centerHorizontal="true"
         android:text="History"
         android:fontFamily="@font/cantpronoun"
         android:id="@+id/history"
         />
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/history"
-        android:stretchColumns="1">
-        <TableRow>
-            <TextView
-                android:layout_gravity="center"
-                android:paddingLeft="10mm"
-                android:fontFamily="@font/cantpronoun"
-                android:text="Hackathon" />
-            <TextView
-                android:layout_gravity="center"
-                android:paddingLeft="10mm"
-                android:fontFamily="@font/cantpronoun"
-                android:text="Project" />
-        </TableRow>
+    <!--<TableLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/history"-->
+        <!--android:stretchColumns="1">-->
+        <!--<TableRow>-->
+            <!--<TextView-->
+                <!--android:layout_gravity="center"-->
+                <!--android:paddingLeft="10mm"-->
+                <!--android:fontFamily="@font/cantpronoun"-->
+                <!--android:text="Hackathon" />-->
+            <!--<TextView-->
+                <!--android:layout_gravity="center"-->
+                <!--android:paddingLeft="10mm"-->
+                <!--android:fontFamily="@font/cantpronoun"-->
+                <!--android:text="Project" />-->
+        <!--</TableRow>-->
 
-        <TableRow>
-            <ListView>
+        <!--<TableRow>-->
 
-            </ListView>
+            <!--<ListView android:id="@+id/hackathon">-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/hacks"/>-->
+            <!--</ListView>-->
 
-            <ListView>
+            <!--<ListView android:id="@+id/project_name" />-->
+        <!--</TableRow>-->
+    <!--</TableLayout>-->
 
-            </ListView>
-        </TableRow>
-    </TableLayout>
-</RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
