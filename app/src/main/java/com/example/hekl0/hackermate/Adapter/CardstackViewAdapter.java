@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdapter.CardstackViewHolder>  {
-    List<ProfileModel> profileModelList = new ArrayList<>();
+    public static List<ProfileModel> profileModelList = new ArrayList<>();
 
     public CardstackViewAdapter(List<ProfileModel> list) {
         profileModelList = list;

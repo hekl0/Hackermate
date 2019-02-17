@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ImageView;
+import com.example.hekl0.hackermate.Activity.InfoActivity;
 import com.example.hekl0.hackermate.Activity.SearchSetting;
 import com.example.hekl0.hackermate.Adapter.CardstackViewAdapter;
 import com.example.hekl0.hackermate.Model.ProfileModel;
@@ -30,6 +32,7 @@ import java.util.List;
  */
 public class SearchFragment extends Fragment implements View.OnClickListener {
     CardStackView cardStackView;
+    CardStackLayoutManager cardStackLayoutManager;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -59,7 +62,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        CardStackLayoutManager cardStackLayoutManager = new CardStackLayoutManager(this.getContext());
+        cardStackLayoutManager = new CardStackLayoutManager(this.getContext());
         cardStackLayoutManager.setStackFrom(StackFrom.Top);
         cardStackView.setLayoutManager(cardStackLayoutManager);
 
@@ -87,6 +90,12 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                 getActivity().startActivity(intent);
                 break;
             case R.id.iv_info:
+                Log.d("lol", "onClick: " + cardStackLayoutManager.getTopPosition());
+                Intent intent1 = new Intent(getContext(), InfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("key", cardStackLayoutManager.getTopPosition());
+                intent1.putExtras(bundle);
+                startActivity(intent1);
                 break;
             case R.id.iv_inbox:
                 break;
