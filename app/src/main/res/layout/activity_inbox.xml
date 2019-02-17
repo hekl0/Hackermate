@@ -16,11 +16,14 @@
         android:background="#999a9b">
 
         <ImageView
+            android:id="@+id/backbtn"
             android:layout_width="40dp"
             android:layout_height="50dp"
-            android:src="@drawable/back"
+            android:src="@drawable/ic_back_arrow"
+            android:padding="6dp"
             android:paddingTop="0dp"/>
         <ImageView
+            android:id="@+id/infobtn"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:src="@drawable/info"

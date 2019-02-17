@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.hekl0.hackermate.R;
 
@@ -28,10 +29,15 @@ public class ChatListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_chat_list, container, false);
         ChatPerson[] CP = new ChatPerson[105];
-        for (int i = 1; i <= 100; i++) {
+        ListView ChatBoxLV = view.findViewById(R.id.ChatBoxLV);
+        for (int i = 0; i <= 100; i++) {
             CP[i] = new ChatPerson("The Hacker", " Bro u want to smoke?", "R.mipmap.anhdeptrai");
         }
+
+        DataAdapterChatBox DACB = new DataAdapterChatBox(this,CP);
+        ChatBoxLV.setAdapter(DACB);
         return view;
+
 
     }
 

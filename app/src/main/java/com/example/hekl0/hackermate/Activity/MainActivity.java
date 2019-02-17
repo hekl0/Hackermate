@@ -1,9 +1,14 @@
 package com.example.hekl0.hackermate.Activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.example.hekl0.hackermate.Adapter.ViewPagerAdapter;
+import com.example.hekl0.hackermate.Fragment.SearchFragment;
 import com.example.hekl0.hackermate.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,5 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 .setMode(BottomNavigationBar.MODE_SHIFTING)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE)
                 .initialise();
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPagerAdapter.addFragment(new ChatListFragment());
+        viewPager.setAdapter(viewPagerAdapter);
     }
 }
