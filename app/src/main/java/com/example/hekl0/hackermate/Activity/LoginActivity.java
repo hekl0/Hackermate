@@ -1,5 +1,6 @@
 package com.example.hekl0.hackermate.Activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Log.d(TAG, "onClick: login button");
         }
         if (v.getId() == R.id.signup_button) {
-            Log.d(TAG, "onClick: signup button");
+            Intent intent = new Intent(this, SignUpActivity.class);
+            startActivity(intent);
         }
     }
 }

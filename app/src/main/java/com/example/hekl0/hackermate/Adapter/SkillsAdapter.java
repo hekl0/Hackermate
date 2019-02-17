@@ -12,14 +12,17 @@ import com.example.hekl0.hackermate.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HackathonsAdapter extends BaseAdapter {
+public class SkillsAdapter extends BaseAdapter {
     List<String> listHackathons = new ArrayList<>();
     Boolean[] checkItem;
 
-    public HackathonsAdapter() {
-        listHackathons.add("Any Hacks");
-        listHackathons.add("BrickHack");
-        listHackathons.add("DandyHack");
+    public SkillsAdapter() {
+        listHackathons.add("Javascript");
+        listHackathons.add("Web Development");
+        listHackathons.add("Backend");
+        listHackathons.add("Frontend");
+        listHackathons.add("Machine Learning");
+        listHackathons.add("Python");
 
         checkItem = new Boolean[listHackathons.size()];
         for (int i = 0; i < checkItem.length; i++)

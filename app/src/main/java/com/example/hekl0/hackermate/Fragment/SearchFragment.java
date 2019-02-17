@@ -1,6 +1,7 @@
 package com.example.hekl0.hackermate.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ImageView;
+import com.example.hekl0.hackermate.Activity.SearchSetting;
 import com.example.hekl0.hackermate.Adapter.CardstackViewAdapter;
 import com.example.hekl0.hackermate.R;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
@@ -44,7 +46,10 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         ImageView iv_info = view.findViewById(R.id.iv_info);
         ImageView iv_inbox = view.findViewById(R.id.iv_inbox);
 
+        iv_setting.setOnClickListener(this);
         iv_undo.setOnClickListener(this);
+        iv_info.setOnClickListener(this);
+        iv_inbox.setOnClickListener(this);
 
         return view;
     }
@@ -56,6 +61,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                 cardStackView.rewind();
                 break;
             case R.id.iv_setting:
+                Intent intent = new Intent(getContext(), SearchSetting.class);
+                getActivity().startActivity(intent);
                 break;
             case R.id.iv_info:
                 break;
