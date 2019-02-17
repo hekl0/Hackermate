@@ -5,7 +5,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+<<<<<<< HEAD
 import android.util.Log;
+=======
+import android.widget.ListView;
+
+>>>>>>> a29633dd69e5d4a0ed43441f88cf9d49a3aa1b98
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.hekl0.hackermate.Adapter.ViewPagerAdapter;

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.hekl0.hackermate.R;
@@ -21,7 +22,7 @@ import jp.wasabeef.picasso.transformations.CropTransformation;
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment extends Fragment {
-
+    private ListView listView;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -41,6 +42,13 @@ public class ProfileFragment extends Fragment {
                 .load(R.drawable.logo)
                 .transform(new CropCircleTransformation())
                 .into(ava);
+
+        String[] hacks = {"BrickHack V", "DandyHack", "BigRedHack"};
+//        listView = view.findViewById(R.id.hackathon);
+//
+//        System.out.print(hacks[0]);
+//        DataAdapter adapter = new DataAdapter(hacks);
+//        listView.setAdapter(adapter);
 
         return view;
     }
