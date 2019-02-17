@@ -66,7 +66,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onResume() {
-        super.onResume();if (UserDatabase.profileModel.image.length() > 0)
+        super.onResume();
+        if (UserDatabase.profileModel.image.length() > 0)
             Picasso.get()
                     .load(UserDatabase.profileModel.image)
                     .transform(new CropCircleTransformation())
