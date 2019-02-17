@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "920224041698",
+    "firebase_url": "https://hackermate-b2f98.firebaseio.com",
+    "project_id": "hackermate-b2f98",
+    "storage_bucket": "hackermate-b2f98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920224041698:android:96010aeeb21f29b1",
+        "android_client_info": {
+          "package_name": "com.example.hekl0.hackermate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920224041698-hhqoqvks378okq5oeqs073clgeirk526.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hekl0.hackermate",
+            "certificate_hash": "2d9f9485e6d11a583b672b436dad2a019c429933"
+          }
+        },
+        {
+          "client_id": "920224041698-1krpcbopitqd64ro115a1pg45dt5fia8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjKQpSPgN9cUPVwgGZlvHi0xbDzFz874k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920224041698-1krpcbopitqd64ro115a1pg45dt5fia8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
