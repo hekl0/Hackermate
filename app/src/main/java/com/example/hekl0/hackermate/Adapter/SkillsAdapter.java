@@ -15,8 +15,11 @@ import java.util.List;
 public class SkillsAdapter extends BaseAdapter {
     List<String> listHackathons = new ArrayList<>();
     Boolean[] checkItem;
+    boolean clickable;
 
-    public SkillsAdapter() {
+    public SkillsAdapter(boolean clickable) {
+        this.clickable = clickable;
+
         listHackathons.add("Javascript");
         listHackathons.add("Fullstack");
         listHackathons.add("Backend");
@@ -52,18 +55,20 @@ public class SkillsAdapter extends BaseAdapter {
         TextView textView = convertView.findViewById(R.id.text);
         textView.setText(listHackathons.get(position));
 
-        final LinearLayout layout = convertView.findViewById(R.id.layout);
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("xxx", "onClick: " + position + " " + checkItem[0]);
-                checkItem[position] = !checkItem[position];
-                if (checkItem[position] == false)
-                    layout.setBackgroundResource(R.drawable.uncheck_empty_round_border);
-                else
-                    layout.setBackgroundResource(R.drawable.check_empty_round_border);
-            }
-        });
+        if (clickable) {
+            final LinearLayout layout = convertView.findViewById(R.id.layout);
+            layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("xxx", "onClick: " + position + " " + checkItem[0]);
+                    checkItem[position] = !checkItem[position];
+                    if (checkItem[position] == false)
+                        layout.setBackgroundResource(R.drawable.uncheck_empty_round_border);
+                    else
+                        layout.setBackgroundResource(R.drawable.check_empty_round_border);
+                }
+            });
+        }
 
         return convertView;
     }

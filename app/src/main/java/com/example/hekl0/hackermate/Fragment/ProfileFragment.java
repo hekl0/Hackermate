@@ -59,7 +59,7 @@ public class ProfileFragment extends Fragment {
                 .transform(new CropCircleTransformation())
                 .into(ava);
 
-        SkillsAdapter skillsAdapter = new SkillsAdapter();
+        SkillsAdapter skillsAdapter = new SkillsAdapter(false);
         skills.setAdapter(skillsAdapter);
 
         HacksAdapter hacksAdapter = new HacksAdapter();

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 .addItem(new BottomNavigationItem(R.drawable.item_chat, "Chat").setActiveColorResource(R.color.fbutton_color_emerald))
                 .addItem(new BottomNavigationItem(R.drawable.item_search, "search").setActiveColorResource(R.color.fbutton_color_carrot))
                 .addItem(new BottomNavigationItem(R.drawable.item_profile, "Profile").setActiveColorResource(R.color.fbutton_default_color))
-                .setFirstSelectedPosition(0)
+                .setFirstSelectedPosition(1)
                 .setMode(BottomNavigationBar.MODE_SHIFTING)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE)
                 .initialise();
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(new SearchFragment());
         viewPagerAdapter.addFragment(new ProfileFragment());
         viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setCurrentItem(1);
 
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int i) {
-                bottomNavigationBar.setFirstSelectedPosition(i);
+                bottomNavigationBar.setFirstSelectedPosition(i).initialise();
             }
 
             @Override

@@ -20,7 +20,7 @@ public class SearchSetting extends AppCompatActivity implements View.OnClickList
         GridView gvHackathons = findViewById(R.id.gv_hackathons);
         gvHackathons.setAdapter(hackathonsAdapter);
 
-        SkillsAdapter skillsAdapter = new SkillsAdapter();
+        SkillsAdapter skillsAdapter = new SkillsAdapter(true);
         GridView gvSkills = findViewById(R.id.gv_skills);
         gvSkills.setAdapter(skillsAdapter);
 
