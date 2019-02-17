@@ -13,10 +13,12 @@ import android.widget.TextView;
 import com.example.hekl0.hackermate.Model.ProfileModel;
 import com.example.hekl0.hackermate.R;
 import com.google.firebase.database.*;
+import com.squareup.picasso.Picasso;
 import okhttp3.internal.cache.DiskLruCache;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdapter.CardstackViewHolder>  {
     List<ProfileModel> profileModelList = new ArrayList<>();
@@ -55,10 +57,28 @@ public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdap
             TextView name = view.findViewById(R.id.name);
             TextView majorSchool = view.findViewById(R.id.major_and_school);
             ImageView badge = view.findViewById(R.id.iv_badge);
+            ImageView ava = view.findViewById(R.id.ava);
 
+            Picasso.get()
+                    .load(profileModel.image)
+                    .into(ava);
             name.setText(profileModel.name);
             majorSchool.setText(profileModel.major + ", " + profileModel.school);
-            badge.setImageResource(R.drawable.badge_5);
+
+            switch (new Random().nextInt(4)) {
+                case 0:
+                    badge.setImageResource(R.drawable.badge_1);
+                    break;
+                case 1:
+                    badge.setImageResource(R.drawable.badge_2);
+                    break;
+                case 2:
+                    badge.setImageResource(R.drawable.badge_3);
+                    break;
+                case 3:
+                    badge.setImageResource(R.drawable.badge_5);
+                    break;
+            }
         }
     }
 }
