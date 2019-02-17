@@ -1,5 +1,6 @@
 package com.example.hekl0.hackermate.Activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,9 +12,12 @@ import android.widget.ImageView;
 
 import com.example.hekl0.hackermate.Adapter.SkillsAdapter;
 import com.example.hekl0.hackermate.R;
-import info.hoang8f.widget.FButton;
+import com.squareup.picasso.Picasso;
 
-public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
+import info.hoang8f.widget.FButton;
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+
+public class ProfileUpdateActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "SignUpActivity";
 
@@ -29,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_profile_update);
 
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
@@ -38,6 +42,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         yourName = findViewById(R.id.your_name);
         yourSchool = findViewById(R.id.your_school);
         yourMajor = findViewById(R.id.your_major);
+        ImageView ava = findViewById(R.id.ProfileAvatar);
+        Picasso.get()
+                .load(R.drawable.default_ava)
+                .transform(new CropCircleTransformation())
+                .into(ava);
 
         SkillsAdapter skillsAdapter = new SkillsAdapter();
         GridView gvSkills = findViewById(R.id.SignUpSkills);
