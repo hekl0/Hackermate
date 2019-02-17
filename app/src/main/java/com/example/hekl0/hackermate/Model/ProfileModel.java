@@ -14,6 +14,8 @@ public class ProfileModel {
     public List<String> skills = new ArrayList<>();
     public List<Hack> history = new ArrayList<>();
 
+    public ProfileModel() {}
+
     public ProfileModel(String image, String name, String school, String major, String hobbies, List<String> skills) {
         this.image = image;
         this.name = name;

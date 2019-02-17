@@ -1,5 +1,6 @@
 package com.example.hekl0.hackermate.Activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.example.hekl0.hackermate.Adapter.SkillsAdapter;
 import com.example.hekl0.hackermate.Model.ProfileModel;
 import com.example.hekl0.hackermate.R;
+import com.example.hekl0.hackermate.Utils.UserDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -86,9 +88,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                                    makeAccount(firebaseUser.getUid());
                                     Toast.makeText(getBaseContext(), "Register Success", Toast.LENGTH_SHORT).show();
-                                    finish();
+                                    makeAccount(firebaseUser.getUid());
                                 } else
                                     Toast.makeText(getBaseContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
@@ -103,14 +104,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             if (skillsAdapter.checkItem[i])
                 skills.add(skillsAdapter.listSkills.get(i));
 
-        DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference("User List");
-        firebaseDatabase.child(id).setValue(
+        UserDatabase.makeProfile(mAuth.getCurrentUser().getUid(),
                 new ProfileModel("",
                         yourName.getText().toString(),
                         yourSchool.getText().toString(),
                         yourMajor.getText().toString(),
                         yourHobbies.getText().toString(),
                         skills));
+        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private boolean checkValidInfo() {
