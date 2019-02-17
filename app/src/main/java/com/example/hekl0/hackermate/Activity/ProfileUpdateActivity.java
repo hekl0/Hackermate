@@ -13,7 +13,7 @@ import com.example.hekl0.hackermate.Adapter.SkillsAdapter;
 import com.example.hekl0.hackermate.R;
 import info.hoang8f.widget.FButton;
 
-public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProfileUpdateActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "SignUpActivity";
 
@@ -29,7 +29,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_profile_update);
 
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
