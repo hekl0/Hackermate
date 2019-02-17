@@ -20,11 +20,11 @@ import java.util.List;
 
 public class ChatActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox);
-        String ran = new String("dsdnjsbdsndsdFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
         List<Chat> s = new ArrayList<>();
         ListView ult2 =   findViewById(R.id.lv);
         ImageView Avatar = findViewById(R.id.avatar);
@@ -32,9 +32,7 @@ public class ChatActivity extends AppCompatActivity {
                 .load(R.mipmap.anhdeptrai)
                 .transform(new CropCircleTransformation())
                 .into(Avatar);
-        for (int i = 0; i < 20; i++) {
-            s.add(new Chat(ran,i%2));
-        }
+
         ImageView back = findViewById(R.id.backbtn);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
