@@ -10,12 +10,13 @@
             android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/uncheck_empty_round_border">
+            android:background="@drawable/uncheck_empty_round_border"
+            android:minWidth="70dp">
         <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BrickHack"
+                android:text="x"
                 android:layout_margin="8dp"/>
 
     </LinearLayout>

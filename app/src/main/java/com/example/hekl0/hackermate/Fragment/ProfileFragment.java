@@ -1,4 +1,4 @@
-package com.example.hekl0.hackermate.Activity;
+package com.example.hekl0.hackermate.Fragment;
 
 
 import android.os.Bundle;
@@ -6,10 +6,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.hekl0.hackermate.Adapter.HacksAdapter;
+import com.example.hekl0.hackermate.Adapter.SkillsAdapter;
 import com.example.hekl0.hackermate.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
@@ -22,7 +25,14 @@ import jp.wasabeef.picasso.transformations.CropTransformation;
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment extends Fragment {
-    private ListView listView;
+    ImageView ava;
+    TextView name;
+    TextView majorSchool;
+    TextView hackGoing;
+    TextView projectWanting;
+    TextView hobbies;
+    GridView skills;
+    ListView hacks;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -35,20 +45,25 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        ImageView ava = view.findViewById(R.id.ava);
-
+        ava = view.findViewById(R.id.ava);
+        name = view.findViewById(R.id.name);
+        majorSchool = view.findViewById(R.id.major_and_school);
+        hackGoing = view.findViewById(R.id.hack_going);
+        projectWanting = view.findViewById(R.id.project_wanting);
+        hobbies = view.findViewById(R.id.hobbies);
+        skills = view.findViewById(R.id.skills);
+        hacks = view.findViewById(R.id.hacks);
 
         Picasso.get()
-                .load(R.drawable.logo)
+                .load(R.drawable.temp)
                 .transform(new CropCircleTransformation())
                 .into(ava);
 
-        String[] hacks = {"BrickHack V", "DandyHack", "BigRedHack"};
-//        listView = view.findViewById(R.id.hackathon);
-//
-//        System.out.print(hacks[0]);
-//        DataAdapter adapter = new DataAdapter(hacks);
-//        listView.setAdapter(adapter);
+        SkillsAdapter skillsAdapter = new SkillsAdapter();
+        skills.setAdapter(skillsAdapter);
+
+        HacksAdapter hacksAdapter = new HacksAdapter();
+        hacks.setAdapter(hacksAdapter);
 
         return view;
     }

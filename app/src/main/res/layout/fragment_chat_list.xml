@@ -3,7 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".Activity.ChatListFragment">
+             tools:context=".Fragment.ChatListFragment">
     <ListView
             android:layout_below="@+id/YourChatHeader"
             android:id="@+id/ChatBoxLV"

@@ -1,4 +1,4 @@
-package com.example.hekl0.hackermate.Activity;
+package com.example.hekl0.hackermate.Adapter;
 
 import android.app.Activity;
 import android.content.Context;

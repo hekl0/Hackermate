@@ -1,4 +1,4 @@
-package com.example.hekl0.hackermate.Activity;
+package com.example.hekl0.hackermate.Adapter;
 
 import android.app.Activity;
 
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.hekl0.hackermate.Model.Chat;
 import com.example.hekl0.hackermate.R;
 
 import com.squareup.picasso.Picasso;
@@ -15,13 +16,15 @@ import com.squareup.picasso.Picasso;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
+import java.util.List;
+
 
 public class DataAdapterInBox extends BaseAdapter {
-    Chat[] items;
+    List<Chat> items;
     Activity activity;
     @Override
     public int getCount() {
-        return items.length;
+        return items.size();
     }
 
     @Override
@@ -34,7 +37,7 @@ public class DataAdapterInBox extends BaseAdapter {
         return 0;
     }
 
-    public DataAdapterInBox(Activity a,Chat[] s) {
+    public DataAdapterInBox(Activity a,List<Chat> s) {
         this.items = s;
         this.activity = a;
 
@@ -56,9 +59,9 @@ public class DataAdapterInBox extends BaseAdapter {
                 .load(R.mipmap.anhdeptrai)
                 .transform(new CropCircleTransformation())
                 .into(img);
-        tvName.setText(items[i].Content);
+        tvName.setText(items.get(i).Content);
         tvName = view.findViewById(R.id.tv_name0);
-        tvName.setText(items[i].Content);
+        tvName.setText(items.get(i).Content);
         // Trả về view kết quả.
         return view;
     }

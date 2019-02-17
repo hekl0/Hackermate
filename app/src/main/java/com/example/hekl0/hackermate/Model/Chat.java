@@ -1,8 +1,8 @@
-package com.example.hekl0.hackermate.Activity;
+package com.example.hekl0.hackermate.Model;
 
 public class Chat {
-    String Content;
-    int num;
+    public String Content;
+    public int num;
 
     public Chat(String s, int a) {
         this.Content = s;

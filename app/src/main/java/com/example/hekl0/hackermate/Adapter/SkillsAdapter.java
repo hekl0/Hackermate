@@ -18,10 +18,10 @@ public class SkillsAdapter extends BaseAdapter {
 
     public SkillsAdapter() {
         listHackathons.add("Javascript");
-        listHackathons.add("Web Development");
+        listHackathons.add("Fullstack");
         listHackathons.add("Backend");
         listHackathons.add("Frontend");
-        listHackathons.add("Machine Learning");
+        listHackathons.add("AI");
         listHackathons.add("Python");
 
         checkItem = new Boolean[listHackathons.size()];

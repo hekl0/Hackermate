@@ -48,7 +48,7 @@
                     android:fontFamily="monospace"
                     android:layout_marginBottom="8dp"/>
 
-            <GridView
+            <com.example.hekl0.hackermate.View.ExpandableHeightGridView
                     android:id="@+id/gv_hackathons"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                     android:fontFamily="monospace"
                     android:layout_marginBottom="8dp"/>
 
-            <GridView
+            <com.example.hekl0.hackermate.View.ExpandableHeightGridView
                     android:id="@+id/gv_skills"
                     android:layout_width="wrap_content"
                     android:layout_height="500dp"

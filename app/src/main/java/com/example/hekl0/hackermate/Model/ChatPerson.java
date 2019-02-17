@@ -1,7 +1,7 @@
-package com.example.hekl0.hackermate.Activity;
+package com.example.hekl0.hackermate.Model;
 
 public class ChatPerson {
-    String Name, LastMess, Source;
+    public String Name, LastMess, Source;
 
     public ChatPerson (String name,String lastMess, String src) {
         this.Source = src;
