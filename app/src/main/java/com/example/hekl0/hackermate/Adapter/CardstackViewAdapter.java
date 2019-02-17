@@ -19,7 +19,7 @@ public class CardstackViewAdapter extends RecyclerView.Adapter<CardstackViewAdap
 
     public CardstackViewAdapter() {
         for (int i = 0; i < 10; i++)
-            profileModelList.add(new ProfileModel("", "Loc Bui " + i, "University of Rochester", "Computer Science"));
+            profileModelList.add(new ProfileModel("", "Loc Bui " + i, "University of Rochester", "Computer Science", "", null));
     }
 
     @NonNull

@@ -1,6 +1,7 @@
 package com.example.hekl0.hackermate.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.hekl0.hackermate.Activity.ProfileUpdateActivity;
 import com.example.hekl0.hackermate.Adapter.HacksAdapter;
 import com.example.hekl0.hackermate.Adapter.SkillsAdapter;
 import com.example.hekl0.hackermate.R;
@@ -37,7 +39,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public ProfileFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,6 +78,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_setting:
+                Intent intent = new Intent(getContext(), ProfileUpdateActivity.class);
+                getActivity().startActivity(intent);
                 break;
             case R.id.iv_logout:
                 break;

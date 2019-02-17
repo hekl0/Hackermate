@@ -13,33 +13,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SkillsAdapter extends BaseAdapter {
-    List<String> listHackathons = new ArrayList<>();
-    Boolean[] checkItem;
+    public List<String> listSkills = new ArrayList<>();
+    public Boolean[] checkItem;
     boolean clickable;
 
     public SkillsAdapter(boolean clickable) {
         this.clickable = clickable;
 
-        listHackathons.add("Javascript");
-        listHackathons.add("Fullstack");
-        listHackathons.add("Backend");
-        listHackathons.add("Frontend");
-        listHackathons.add("AI");
-        listHackathons.add("Python");
+        listSkills.add("Javascript");
+        listSkills.add("Fullstack");
+        listSkills.add("Backend");
+        listSkills.add("Frontend");
+        listSkills.add("AI");
+        listSkills.add("Python");
 
-        checkItem = new Boolean[listHackathons.size()];
+        checkItem = new Boolean[listSkills.size()];
         for (int i = 0; i < checkItem.length; i++)
             checkItem[i] = false;
     }
 
     @Override
     public int getCount() {
-        return listHackathons.size();
+        return listSkills.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return listHackathons.get(position);
+        return listSkills.get(position);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class SkillsAdapter extends BaseAdapter {
         convertView = layoutInflater.inflate(R.layout.round_border_item, parent, false);
 
         TextView textView = convertView.findViewById(R.id.text);
-        textView.setText(listHackathons.get(position));
+        textView.setText(listSkills.get(position));
 
         if (clickable) {
             final LinearLayout layout = convertView.findViewById(R.id.layout);

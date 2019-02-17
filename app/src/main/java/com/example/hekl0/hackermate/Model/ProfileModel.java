@@ -1,5 +1,6 @@
 package com.example.hekl0.hackermate.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileModel {
@@ -7,16 +8,19 @@ public class ProfileModel {
     public String name;
     public String school;
     public String major;
-    public List<String> hackGoingTo;
-    public List<String> willingToDo;
-    public List<String> skills;
-    public List<Hack> history;
+    public String hobbies;
+    public List<String> hackGoingTo = new ArrayList<>();
+    public List<String> willingToDo = new ArrayList<>();
+    public List<String> skills = new ArrayList<>();
+    public List<Hack> history = new ArrayList<>();
 
-    public ProfileModel(String image, String name, String school, String major) {
+    public ProfileModel(String image, String name, String school, String major, String hobbies, List<String> skills) {
         this.image = image;
         this.name = name;
         this.school = school;
         this.major = major;
+        this.hobbies = hobbies;
+        this.skills = skills;
     }
 
     public class Hack {
