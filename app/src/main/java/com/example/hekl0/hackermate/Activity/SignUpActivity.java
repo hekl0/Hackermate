@@ -48,6 +48,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.back_button:
+                finish();
                 break;
             case R.id.signup_button:
                 if (!checkValidInfo())
