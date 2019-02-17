@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hekl0.hackermate.Model.ProfileModel;
 import com.example.hekl0.hackermate.R;
 import com.example.hekl0.hackermate.Utils.UserDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,10 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.*;
 
 import info.hoang8f.widget.FButton;
+
+import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "LoginActivity";
@@ -66,9 +68,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Log.d(TAG, "signInWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 UserDatabase.setUserId(mAuth.getCurrentUser().getUid());
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(intent);
-                                finish();
+
+                                UserDatabase.databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        Log.d("xxx", "onDataChange: " + dataSnapshot);
+                                        UserDatabase.profileModel = dataSnapshot.getValue(ProfileModel.class);
+                                        if (UserDatabase.profileModel.hackGoingTo == null)
+                                            UserDatabase.profileModel.hackGoingTo = new ArrayList<>();
+                                        if(UserDatabase.profileModel.skills == null)
+                                            UserDatabase.profileModel.skills = new ArrayList<>();
+                                        if (UserDatabase.profileModel.history == null)
+                                            UserDatabase.profileModel.history = new ArrayList<>();
+                                        if (UserDatabase.profileModel.chatList == null)
+                                            UserDatabase.profileModel.chatList = null;
+
+                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -86,7 +109,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (v.getId() == R.id.signup_button) {
             Intent intent = new Intent(this, SignUpActivity.class);
             startActivity(intent);
-            finish();
         }
     }
 }

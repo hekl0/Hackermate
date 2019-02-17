@@ -32,6 +32,16 @@ public class SkillsAdapter extends BaseAdapter {
             checkItem[i] = false;
     }
 
+    public SkillsAdapter(boolean clickable, List<String> skills) {
+        this.clickable = clickable;
+
+        listSkills = skills;
+
+        checkItem = new Boolean[listSkills.size()];
+        for (int i = 0; i < checkItem.length; i++)
+            checkItem[i] = false;
+    }
+
     @Override
     public int getCount() {
         return listSkills.size();

@@ -75,15 +75,6 @@
                     android:layout_toRightOf="@id/status"
                     android:layout_marginLeft="8dp"/>
 
-            <TextView
-                    android:id="@+id/project_wanting"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Looking to work in Mobile Project"
-                    android:layout_toRightOf="@id/status"
-                    android:layout_below="@id/hack_going"
-                    android:layout_marginLeft="8dp"/>
-
         </RelativeLayout>
 
         <RelativeLayout

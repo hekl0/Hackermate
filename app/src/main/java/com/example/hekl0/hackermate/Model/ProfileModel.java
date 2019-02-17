@@ -11,7 +11,6 @@ public class ProfileModel {
     public String major;
     public String hobbies;
     public List<String> hackGoingTo = new ArrayList<>();
-    public List<String> willingToDo = new ArrayList<>();
     public List<String> skills = new ArrayList<>();
     public List<Hack> history = new ArrayList<>();
     public List<String> chatList = new ArrayList<>();

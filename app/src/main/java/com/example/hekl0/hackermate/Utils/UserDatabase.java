@@ -12,7 +12,7 @@ public class UserDatabase {
 
     public static ProfileModel profileModel;
 
-    static DatabaseReference databaseReference;
+    public static DatabaseReference databaseReference;
 
     public static void makeProfile(String id, ProfileModel profileModel) {
         UserDatabase.id = id;
@@ -31,28 +31,5 @@ public class UserDatabase {
         UserDatabase.id = id;
 
         databaseReference = FirebaseDatabase.getInstance().getReference("User List").child(id);
-
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.d("xxx", "onDataChange: " + dataSnapshot);
-                profileModel = dataSnapshot.getValue(ProfileModel.class);
-                if (profileModel.hackGoingTo == null)
-                    profileModel.hackGoingTo = new ArrayList<>();
-                if (profileModel.willingToDo == null)
-                    profileModel.willingToDo = new ArrayList<>();
-                if(profileModel.skills == null)
-                    profileModel.skills = new ArrayList<>();
-                if (profileModel.history == null)
-                    profileModel.history = new ArrayList<>();
-                if (profileModel.chatList == null)
-                    profileModel.chatList = null;
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 }

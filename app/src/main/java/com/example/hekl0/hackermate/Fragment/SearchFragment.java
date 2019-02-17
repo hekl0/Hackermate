@@ -3,6 +3,7 @@ package com.example.hekl0.hackermate.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +12,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.example.hekl0.hackermate.Activity.SearchSetting;
 import com.example.hekl0.hackermate.Adapter.CardstackViewAdapter;
+import com.example.hekl0.hackermate.Model.ProfileModel;
 import com.example.hekl0.hackermate.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackView;
 import com.yuyakaido.android.cardstackview.StackFrom;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,9 +42,22 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
-        CardstackViewAdapter cardstackViewAdapter = new CardstackViewAdapter();
         cardStackView = view.findViewById(R.id.cardstack_view);
-        cardStackView.setAdapter(cardstackViewAdapter);
+        FirebaseDatabase.getInstance().getReference("User List").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List<ProfileModel> list = new ArrayList<>();
+                for (DataSnapshot snapshot: dataSnapshot.getChildren())
+                    list.add(snapshot.getValue(ProfileModel.class));
+                CardstackViewAdapter cardstackViewAdapter = new CardstackViewAdapter(list);
+                cardStackView.setAdapter(cardstackViewAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         CardStackLayoutManager cardStackLayoutManager = new CardStackLayoutManager(this.getContext());
         cardStackLayoutManager.setStackFrom(StackFrom.Top);
