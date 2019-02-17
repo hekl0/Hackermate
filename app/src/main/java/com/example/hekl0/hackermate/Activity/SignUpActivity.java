@@ -105,7 +105,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 skills.add(skillsAdapter.listSkills.get(i));
 
         UserDatabase.makeProfile(mAuth.getCurrentUser().getUid(),
-                new ProfileModel("",
+                new ProfileModel(" ",
                         yourName.getText().toString(),
                         yourSchool.getText().toString(),
                         yourMajor.getText().toString(),

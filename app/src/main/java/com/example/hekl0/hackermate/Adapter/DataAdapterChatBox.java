@@ -18,11 +18,13 @@ import com.squareup.picasso.Picasso;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
+import java.io.File;
 import java.util.List;
 
 public class DataAdapterChatBox extends BaseAdapter {
     Fragment fragment;
     List<ChatPerson> cp;
+    public static String src;
     @Override
     public int getCount() {
         return cp.size();
@@ -52,9 +54,12 @@ public class DataAdapterChatBox extends BaseAdapter {
         // Đặt chữ cho từng view trong danh sách.
         TextView tvName = view.findViewById(R.id.PersonName);
         ImageView img = view.findViewById(R.id.avatar);
-        LinearLayout chatsquare = view.findViewById(R.id.ChatSquare);
+        final LinearLayout chatsquare = view.findViewById(R.id.ChatSquare);
+        src = "https://firebasestorage.googleapis.com/v0/b/hackermate-b2f98.appspot.com/o/ava_bao.jpg?alt=media&token=c99f06db-39f6-4272-afd1-56e8b1c25ec0";
+        if(i==1) src = "https://firebasestorage.googleapis.com/v0/b/hackermate-b2f98.appspot.com/o/ava_phanh.jpg?alt=media&token=49752088-947a-469c-9485-3ad5015bf042";
+        if(i==2) src = "https://firebasestorage.googleapis.com/v0/b/hackermate-b2f98.appspot.com/o/ava_ash.jpg?alt=media&token=a992b408-4562-4644-8497-a9df077c74d7";
         Picasso.get()
-                .load(R.mipmap.anhdeptrai)
+                .load(src)
                 .transform(new CropCircleTransformation())
                 .into(img);
         tvName.setText(cp.get(i).Name);
@@ -65,7 +70,6 @@ public class DataAdapterChatBox extends BaseAdapter {
             public void onClick(View view) {
 
                 Intent intent = new Intent(fragment.getContext(), ChatActivity.class);
-
                 fragment.getActivity().overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_right);
                 fragment.getContext().startActivity(intent);
             }

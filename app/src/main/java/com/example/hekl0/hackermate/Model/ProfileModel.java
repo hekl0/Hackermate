@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileModel {
+    public String id;
     public String image;
     public String name;
     public String school;
@@ -14,7 +15,9 @@ public class ProfileModel {
     public List<Hack> history = new ArrayList<>();
     public List<String> chatList = new ArrayList<>();
 
-    public ProfileModel() {}
+
+    public ProfileModel() {
+    }
 
     public ProfileModel(String image, String name, String school, String major, String hobbies, List<String> skills) {
         this.image = image;
@@ -29,5 +32,14 @@ public class ProfileModel {
         public String nameHack;
         public String nameProject;
         public List<String> teamMember;
+    }
+
+    public class ChatModel {
+        String p2, id;
+
+        public ChatModel(String P2, String id) {
+            this.p2 = P2;
+            this.id = id;
+        }
     }
 }

@@ -33,11 +33,11 @@ public class ChatListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chat_list, container, false);
         List<ChatPerson> CP = new ArrayList<>();
         ListView ChatBoxLV = view.findViewById(R.id.ChatBoxLV);
-        for (int i = 0; i <= 10; i++) {
-            CP.add(new ChatPerson("The Hacker", " Bro u want to smoke?", "R.mipmap.anhdeptrai"));
-        }
+        for (int i = 0; i < 3; i++)
+            CP.add(new ChatPerson("Bao Tran", " Bro u want to do some hacking?", "drawable.ava_bao"));
 
-        DataAdapterChatBox DACB = new DataAdapterChatBox(this,CP);
+
+        DataAdapterChatBox DACB = new DataAdapterChatBox(this, CP);
         ChatBoxLV.setAdapter(DACB);
         return view;
 

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.hekl0.hackermate.Model.Chat;
+import com.example.hekl0.hackermate.Model.Message;
 import com.example.hekl0.hackermate.R;
 
 import com.squareup.picasso.Picasso;
@@ -20,7 +20,7 @@ import java.util.List;
 
 
 public class DataAdapterInBox extends BaseAdapter {
-    List<Chat> items;
+    List<Message> items;
     Activity activity;
     @Override
     public int getCount() {
@@ -37,7 +37,7 @@ public class DataAdapterInBox extends BaseAdapter {
         return 0;
     }
 
-    public DataAdapterInBox(Activity a,List<Chat> s) {
+    public DataAdapterInBox(Activity a,List<Message> s) {
         this.items = s;
         this.activity = a;
 
