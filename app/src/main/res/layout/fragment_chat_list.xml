@@ -5,7 +5,6 @@
              android:layout_height="match_parent"
              tools:context=".Fragment.ChatListFragment">
     <ListView
-            android:layout_below="@+id/YourChatHeader"
             android:id="@+id/ChatBoxLV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -14,16 +13,5 @@
             android:layout_marginBottom="0dp"
             android:divider="@android:color/transparent"
             android:dividerHeight="10.0sp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:background="#EDD4D6D8"
-        android:text="Your Chat"
-        android:textAlignment="center"
-        android:paddingBottom="12dp"
-        android:paddingTop="12dp"
-        android:textStyle="bold"
-        android:id="@+id/YourChatHeader"/>
 
 </RelativeLayout>
