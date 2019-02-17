@@ -38,15 +38,14 @@
                 android:layout_centerInParent="true"
                 android:layout_marginVertical="0dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:src="@mipmap/anhdeptrai"/>
+                android:layout_marginTop="15dp" />
 
         <TextView
-                android:layout_below="@+id/avatar"
+                android:id="@+id/amevatar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="The Hacker"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="#000000"/>
     </RelativeLayout>
@@ -69,7 +68,7 @@
                 android:layout_marginLeft="10dp"
                 android:paddingLeft="8dp"
                 android:paddingBottom="5dp"
-                android:text="concak"
+                android:text=""
                 android:layout_toLeftOf="@+id/iv_send"/>
 
         <ImageView
