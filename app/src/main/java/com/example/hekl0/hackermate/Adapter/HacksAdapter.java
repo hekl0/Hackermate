@@ -64,7 +64,7 @@ public class HacksAdapter extends BaseAdapter {
                 .into(ava1);
 
         Picasso.get()
-                .load(R.drawable.ava_loc)
+                .load(R.drawable.ava_downy)
                 .transform(new CropCircleTransformation())
                 .into(ava2);
 
