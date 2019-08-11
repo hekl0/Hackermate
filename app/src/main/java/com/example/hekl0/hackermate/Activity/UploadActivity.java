@@ -26,7 +26,6 @@ public class UploadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initImageView();
         try {
             prepareLanguageDir();
             m_tess = new TessBaseAPI();
@@ -34,12 +33,6 @@ public class UploadActivity extends AppCompatActivity {
         } catch (Exception e) {
             // Logging here
         }
-    }
-
-    private void initImageView() {
-        ImageView imgView = (ImageView) findViewById(R.id.random_text);
-        Bitmap input = BitmapFactory.decodeResource(getResources(), R.drawable.test_file);
-        imgView.setImageBitmap(input);
     }
 
     // copy file from assets to another folder due to accessible
@@ -77,7 +70,7 @@ public class UploadActivity extends AppCompatActivity {
         }
 
         try {
-            m_tess.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_file));
+            //m_tess.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.image_to_be_processed));
             String result = m_tess.getUTF8Text();
             TextView resultView = (TextView) findViewById(R.id.txt_result);
             resultView.setText(result);
