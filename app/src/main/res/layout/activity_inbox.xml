@@ -60,16 +60,16 @@
             android:background="#ffffff">
 
         <EditText
-                android:id="@+id/inputTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:background="@drawable/input_field"
-                android:layout_marginLeft="10dp"
-                android:paddingLeft="8dp"
-                android:paddingBottom="5dp"
-                android:text=""
-                android:layout_toLeftOf="@+id/iv_send"/>
+            android:id="@+id/inputTextField"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/iv_send"
+            android:background="@drawable/input_field"
+            android:paddingLeft="8dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="" />
 
         <ImageView
                 android:id="@+id/iv_send"
@@ -80,6 +80,18 @@
                 android:src="@drawable/send_arrow"
                 android:layout_marginLeft="15dp"
                 android:layout_alignParentEnd="true"/>
+
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="9dp"
+            android:layout_toStartOf="@+id/inputTextField"
+            android:text="Upload"
+            android:onClick="upload"
+            android:textSize="25pt" />
     </RelativeLayout>
 
     <ListView

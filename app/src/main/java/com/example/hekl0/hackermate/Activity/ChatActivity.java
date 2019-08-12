@@ -71,4 +71,9 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void upload(View v) {
+        Intent intent = new Intent(this, UploadActivity.class);
+        startActivity(intent);
+    }
 }
